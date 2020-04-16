@@ -12,7 +12,7 @@ class Home(TemplateView):
 class About(TemplateView):
 	template_name = 'app/about.html'
 
-
+#this is first commit
 
 class Portfolio_work(ListView):
     template_name = 'app/portfolio-work.html'
