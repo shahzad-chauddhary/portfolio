@@ -1,0 +1,17 @@
+{#{% load static %}#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for i in album %}
+{#  <img itemprop="image" src="{{ i.img.url }}">#}
+  <img src="{{ MEDIA_URL }}{{ i.img.url }}">
+
+{% endfor %}
+
+</body>
+
+</html>
