@@ -105,7 +105,7 @@
                         <div class="single_catagory">
                             <span>Client</span>
                             {% for i in obj %}
-                                <h4>{{ i.clientnam }}</h4>
+                                <h4>{{ i.client_name }}</h4>
 {#                                <h4>Mesica Chouhan</h4>#}
                             {% endfor %}
                         </div>
@@ -119,7 +119,7 @@
                         <div class="single_catagory">
                             <span>Project Date</span>
                             {% for i in obj %}
-                                <h4>{{ i.proj_date }}</h4>
+                                <h4>{{ i.project_date }}</h4>
 {#                                <h4>Oct 12, 2019</h4>#}
                             {% endfor %}
                         </div>
@@ -138,7 +138,7 @@
                     </div>
                     <div class="banner">
                         {% for i in obj %}
-                            <img src="{{ MEDIA_URL }}{{ i.cimg.url }}">
+                            <img src="{{ MEDIA_URL }}{{ i.banner_img.url }}">
                         {% endfor %}
 {#                        <img src="{% static 'app/img/details/banner_details.png' %}" alt="">#}
                     </div>
@@ -147,7 +147,7 @@
                             <div class="col-lg-6">
                                 <div class="info">
                                     {% for i in obj %}
-                                        <p>{{ i.des1 }}</p>
+                                        <p>{{ i.descrip_1 }}</p>
                                     {% endfor %}
 {#                                    <p>A wonderful serenity has taken to the possession of my entire soul network infrastructure, including consolidation of established network designed and created infrastructure. Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>#}
                                 </div>
@@ -155,7 +155,7 @@
                             <div class="col-lg-6">
                                 <div class="info">
                                     {% for i in obj %}
-                                        <p>{{ i.des2 }}</p>
+                                        <p>{{ i.descrip_2 }}</p>
                                     {% endfor %}
 {#                                    <p>A wonderful serenity has taken to the possession of my entire soul network infrastructure, including consolidation of established network designed and created infrastructure.</p>#}
                                 </div>
