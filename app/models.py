@@ -19,7 +19,7 @@ class Service(models.Model):
     heading = models.CharField(max_length=30)
     description = models.TextField(max_length=300)
 
-class ServiceB(models.Model):
+class AboutService(models.Model):
     img = models.ImageField(upload_to='services')
     heading = models.CharField(max_length=80)
     description = models.TextField(max_length=300)

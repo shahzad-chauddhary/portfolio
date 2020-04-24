@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView,ListView
-from .models import MobileApp,WorkDetail,Service,ServiceB
+from .models import MobileApp,WorkDetail,Service,AboutService
 
 
 class Home(TemplateView):
@@ -30,8 +30,8 @@ class Services(ListView):
     queryset = Service.objects.all()
     def get_context_data(self, **kwargs):
         context = super(Services,self).get_context_data(**kwargs)
-        context['obj'] = Service.objects.all()
-        context['data'] = ServiceB.objects.all()
+        context['service'] = Service.objects.all()
+        context['about'] = AboutService.objects.all()
 
         return context
 
