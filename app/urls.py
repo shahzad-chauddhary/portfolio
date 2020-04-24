@@ -9,8 +9,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
 
-    # path('',views.Image,name=''),
-    path('index',views.Home.as_view(),name='index'),
+
+    path('',views.Home.as_view(),name='index'),
     path('about', views.About.as_view(), name='about'),
     path('portfolio-work', views.Portfolio_work.as_view(), name='portfolio_work'),
     path('work_details', views.Work_details.as_view(), name='work_details'),

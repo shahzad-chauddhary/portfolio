@@ -13,3 +13,14 @@ class WorkDetail(models.Model):
     descrip_2 = models.CharField(max_length=250)
     thumb_img1 = models.ImageField(upload_to='details')
     thumb_img2 = models.ImageField(upload_to='details')
+
+class Service(models.Model):
+    icon = models.FileField(upload_to='svg_icon')
+    heading = models.CharField(max_length=30)
+    description = models.TextField(max_length=300)
+
+class ServiceB(models.Model):
+    img = models.ImageField(upload_to='services')
+    heading = models.CharField(max_length=80)
+    description = models.TextField(max_length=300)
+
