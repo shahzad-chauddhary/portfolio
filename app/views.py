@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView,ListView
-from .models import MobileApp
+from .models import MobileApp,WorkDetail
 
 
 class Home(TemplateView):
@@ -12,15 +12,17 @@ class Home(TemplateView):
 class About(TemplateView):
 	template_name = 'app/about.html'
 
-#this is first commit
+
 
 class Portfolio_work(ListView):
     template_name = 'app/portfolio-work.html'
     queryset = MobileApp.objects.all()
     context_object_name = 'album'
 
-class Work_details(TemplateView):
+class Work_details(ListView):
     template_name = 'app/work_details.html'
+    queryset = WorkDetail.objects.all()
+    context_object_name = 'obj'
 
 
 class Services(TemplateView):

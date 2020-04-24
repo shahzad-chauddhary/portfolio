@@ -104,15 +104,24 @@
                     <div class="details_catagory_wrap">
                         <div class="single_catagory">
                             <span>Client</span>
-                            <h4>Mesica Chouhan</h4>
+                            {% for i in obj %}
+                                <h4>{{ i.client_name }}</h4>
+{#                                <h4>Mesica Chouhan</h4>#}
+                            {% endfor %}
                         </div>
                         <div class="single_catagory">
                             <span>Category</span>
-                            <h4>Mobile App</h4>
+                            {% for i in obj %}
+                                <h4>{{ i.category }}</h4>
+{#                                <h4>Mobile App</h4>#}
+                            {% endfor %}
                         </div>
                         <div class="single_catagory">
                             <span>Project Date</span>
-                            <h4>Oct 12, 2019</h4>
+                            {% for i in obj %}
+                                <h4>{{ i.project_date }}</h4>
+{#                                <h4>Oct 12, 2019</h4>#}
+                            {% endfor %}
                         </div>
                         <div class="single_catagory">
                             <span>Share Project</span>
@@ -128,18 +137,27 @@
                         </div>
                     </div>
                     <div class="banner">
-                        <img src="{% static 'app/img/details/banner_details.png' %}" alt="">
+                        {% for i in obj %}
+                            <img src="{{ MEDIA_URL }}{{ i.banner_img.url }}">
+                        {% endfor %}
+{#                        <img src="{% static 'app/img/details/banner_details.png' %}" alt="">#}
                     </div>
                     <div class="details_info">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="info">
-                                    <p>A wonderful serenity has taken to the possession of my entire soul network infrastructure, including consolidation of established network designed and created infrastructure. Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                                    {% for i in obj %}
+                                        <p>{{ i.descrip_1 }}</p>
+                                    {% endfor %}
+{#                                    <p>A wonderful serenity has taken to the possession of my entire soul network infrastructure, including consolidation of established network designed and created infrastructure. Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>#}
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="info">
-                                    <p>A wonderful serenity has taken to the possession of my entire soul network infrastructure, including consolidation of established network designed and created infrastructure.</p>
+                                    {% for i in obj %}
+                                        <p>{{ i.descrip_2 }}</p>
+                                    {% endfor %}
+{#                                    <p>A wonderful serenity has taken to the possession of my entire soul network infrastructure, including consolidation of established network designed and created infrastructure.</p>#}
                                 </div>
                             </div>
                         </div>
@@ -148,12 +166,18 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6">
                                 <div class="thumb">
-                                    <img src="{% static 'app/img/details/1.png' %}" alt="">
+                                    {% for i in obj %}
+                                        <img src="{{ MEDIA_URL }}{{ i.thumb_img1.url }}">
+                                    {% endfor %}
+{#                                    <img src="{% static 'app/img/details/1.png' %}" alt="">#}
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="thumb">
-                                    <img src="{% static 'app/img/details/2.png' %}" alt="">
+                                     {% for i in obj %}
+                                        <img src="{{ MEDIA_URL }}{{ i.thumb_img2.url }}">
+                                    {% endfor %}
+{#                                    <img src="{% static 'app/img/details/2.png' %}" alt="">#}
                                 </div>
                             </div>
                         </div>
