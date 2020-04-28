@@ -104,33 +104,20 @@
                 </div>
             <div class="container">
                 <div class="row">
+                    {% for i in service %}
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="single_service">
                             <div class="icon">
-                                <img src="{% static 'app/img/svg_icon/1.svg' %}" alt="">
+                                <img src="{{ MEDIA_URL }}{{ i.icon.url }}">
                             </div>
-                            <h3>3D Modeling</h3>
-                            <p>A wonderful serenity has taken to the  <br> possession of my entire soul network <br> infrastructure, including consolidation of <br> established network designed and</p>
+                            <h3>{{ i.heading }}</h3>
+                            <p>{{ i.description }}</p>
+
+
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single_service">
-                            <div class="icon">
-                                <img src="{% static 'app/img/svg_icon/2.svg' %}" alt="">
-                            </div>
-                            <h3>UI/UX Design</h3>
-                            <p>A wonderful serenity has taken to the  <br> possession of my entire soul network <br> infrastructure, including consolidation of <br> established network designed and</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single_service">
-                            <div class="icon">
-                                <img src="{% static 'app/img/svg_icon/3.svg' %}" alt="">
-                            </div>
-                            <h3>Architectural Design</h3>
-                            <p>A wonderful serenity has taken to the  <br> possession of my entire soul network <br> infrastructure, including consolidation of <br> established network designed and</p>
-                        </div>
-                    </div>
+                    {% endfor %}
+
                 </div>
             </div>
         </div>
@@ -141,15 +128,19 @@
                 <div class="row align-items-center">
                     <div class="col-xl-6 col-lg-6">
                         <div class="about_thumb">
-                            <img src="{% static 'app/img/about/1.png' %}" alt="">
+                            {% for i in about %}
+                            <img src="{{ MEDIA_URL }}{{ i.img.url }}">
+                            {% endfor %}
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6">
                         <div class="about_info">
-                            <h3>Good design <br>
-                                    knowledge with <br>
-                                    creative peoples</h3>
-                            <p>A wonderful serenity has taken to the possession of my entire soul network infrastructure, including consolidation of good day established network designed and created infrastructure. Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+
+                                {% for i in about %}
+                                    <h3>{{ i.heading }}</h3>
+                                    <p>{{ i.description }}</p>
+                                {% endfor %}
+
                         </div>
                     </div>
                 </div>
