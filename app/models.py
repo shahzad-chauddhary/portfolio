@@ -25,7 +25,7 @@ class AboutService(models.Model):
     description = models.TextField(max_length=300)
 
 
-class Aboutt(models.Model):
+class About(models.Model):
     img = models.ImageField(upload_to='about')
     name = models.CharField(max_length=20)
     designation = models.CharField(max_length=20)

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView,ListView
-from .models import MobileApp,WorkDetail,Service,AboutService,Aboutt,AboutTestimonial
+from .models import MobileApp,WorkDetail,Service,AboutService,About,AboutTestimonial
 
 
 class Home(TemplateView):
@@ -9,13 +9,13 @@ class Home(TemplateView):
 
 
 
-class About(ListView):
+class AboutView(ListView):
     template_name = 'app/about.html'
-    queryset = Aboutt.objects.all()
+    queryset = About.objects.all()
+    context_object_name = 'people'
 
     def get_context_data(self, **kwargs):
-        context = super(About,self).get_context_data(**kwargs)
-        context['people'] = Aboutt.objects.all()
+        context = super(AboutView,self).get_context_data(**kwargs)
         context['testimonal'] = AboutTestimonial.objects.all()
 
         return context
@@ -35,9 +35,9 @@ class Work_details(ListView):
 class Services(ListView):
     template_name = 'app/services.html'
     queryset = Service.objects.all()
+    context_object_name = 'service'
     def get_context_data(self, **kwargs):
         context = super(Services,self).get_context_data(**kwargs)
-        context['service'] = Service.objects.all()
         context['about'] = AboutService.objects.all()
 
         return context
