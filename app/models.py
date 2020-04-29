@@ -24,3 +24,18 @@ class AboutService(models.Model):
     heading = models.CharField(max_length=80)
     description = models.TextField(max_length=300)
 
+
+class Aboutt(models.Model):
+    img = models.ImageField(upload_to='about')
+    name = models.CharField(max_length=20)
+    designation = models.CharField(max_length=20)
+
+class AboutTestimonial(models.Model):
+    img = models.ImageField(upload_to='about')
+    description = models.TextField(max_length=400)
+    author = models.CharField(max_length=15)
+    author_name = models.CharField(max_length=15)
+
+
+
+

@@ -179,50 +179,19 @@
             </div>
             <div class="border_bottom">
                 <div class="row">
+                    {% for i in people %}
                     <div class="col-lg-3 col-md-6">
                         <div class="single_people">
                             <div class="thumb">
-                                <img src="{% static 'app/img/team/1.png' %}" alt="">
+                                <img src="{{ MEDIA_URL }}{{ i.img.url }}">
                             </div>
                             <div class="people_info">
-                                <h4>Mesica Chouhan</h4>
-                                <p>Business Owner</p>
+                                <h4>{{ i.name }}</h4>
+                                <p>{{ i.designation }}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single_people">
-                            <div class="thumb">
-                                <img src="{% static 'app/img/team/2.png' %}" alt="">
-                            </div>
-                            <div class="people_info">
-                                <h4>Mesica Chouhan</h4>
-                                <p>Business Owner</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single_people">
-                            <div class="thumb">
-                                <img src="{% static 'app/img/team/3.png' %}" alt="">
-                            </div>
-                            <div class="people_info">
-                                <h4>Mesica Chouhan</h4>
-                                <p>Business Owner</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single_people">
-                            <div class="thumb">
-                                <img src="{% static 'app/img/team/4.png' %}" alt="">
-                            </div>
-                            <div class="people_info">
-                                <h4>Mesica Chouhan</h4>
-                                <p>Business Owner</p>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -238,53 +207,24 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="testmonial_active owl-carousel">
+                            {% for i in testimonal %}
                             <div class="single_carousel">
                                 <div class="row justify-content-center">
                                     <div class="col-lg-6">
                                         <div class="single_testmonial text-center">
                                                 <div class="thumb">
-                                                        <img src="{% static 'app/img/testmonial/thumb.png' %}" alt="">
+                                                        <img src="{{ MEDIA_URL }}{{ i.img.url }}">
                                                 </div>
-                                            <p>Innovative brewing methods and our coffee is sourced from various parts of the globe and are roasted to perfection. </p>
+                                            <p>{{ i.description }}</p>
                                             <div class="testmonial_author">
-                                                <h3>Mesica Chouhan</h3>
-                                                <span>Mesica Chouhan</span>
+                                                <h3>{{ i.author }}</h3>
+                                                <span>{{ i.author_name }}</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="single_carousel">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-6">
-                                        <div class="single_testmonial text-center">
-                                                <div class="thumb">
-                                                        <img src="{% static 'app/img/testmonial/thumb.png' %}" alt="">
-                                                </div>
-                                            <p>Innovative brewing methods and our coffee is sourced from various parts of the globe and are roasted to perfection. </p>
-                                            <div class="testmonial_author">
-                                                <h3>Mesica Chouhan</h3>
-                                                <span>Mesica Chouhan</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single_carousel">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-6">
-                                        <div class="single_testmonial text-center">
-                                                <div class="thumb">
-                                                        <img src="{% static 'app/img/testmonial/thumb.png' %}" alt="">
-                                                </div>
-                                            <p>Innovative brewing methods and our coffee is sourced from various parts of the globe and are roasted to perfection. </p>
-                                            <div class="testmonial_author">
-                                                <h3>Mesica Chouhan</h3>
-                                                <span>Mesica Chouhan</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            {% endfor %}
                             </div>
                         </div>
                     </div>
